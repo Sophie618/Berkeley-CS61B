@@ -13,6 +13,12 @@ public class JavaExercises {
      */
     public static void starTriangle() {
         // TODO: Fill in this function
+        for(int i=1;i<=5;i++){//5行
+            for(int j=1;j<=i;j++){//每行打印对应的*数
+                System.out.print('*');
+            }
+        System.out.println();//每行结束之后换行
+        }
     }
 
     /**
@@ -21,6 +27,13 @@ public class JavaExercises {
      */
     public static void printIndexed(String s) {
         // TODO: Fill in this function
+        for(int i=0;i<s.length();i++){
+            int idx=s.length()-1-i;
+            char now=s.charAt(i);
+            System.out.print(now);
+            System.out.print(idx);//分开打印,直接+号相连的到的是ASCLL码值
+        }
+        System.out.println();
     }
 
     /**
@@ -29,7 +42,12 @@ public class JavaExercises {
      */
     public static String stutter(String s) {
         // TODO: Fill in this function
-        return null;
+        StringBuilder result= new StringBuilder();
+        for(int i=0;i<s.length();i++) {
+            char now = s.charAt(i);
+            result.append(now).append(now);
+        }
+        return result.toString();
     }
 
     /**
@@ -43,7 +61,17 @@ public class JavaExercises {
      */
     public static int quadrant(int x, int y) {
         // TODO: Fill in this function
-        return 0;
+        if(x==0 || y==0){
+            return 0;
+        }
+        else if(x>0){
+            if(y>0) return 1;
+            return 4;
+        }
+        else{//x<0
+            if(y>0) return 2;
+            return 3;
+        }
     }
 
     public static void main(String[] args) {
